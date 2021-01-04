@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}美容関係の会社で働く、１児の母が書くブログ{% endblock %}
+
+{% block active_index %}active{% endblock %}
+
+{% block contents %}
+    <!-- Page Content -->
+    <!-- Blog Entries Column -->
+    <div class="col-md-8">
+        <div class="my-div-style"></div>
+                <h1 class="my-4">NEW!</h1>
+
+
+        {% for diary in diary_list %}
+            <!-- Blog Post -->
+
+            <div class="card mb-4">
+                {% if object.photo1 %}
+                    <img class="card-img-top" src="{{ object.photo1.url }}" alt="Card image cap">
+                {% endif %}
+                <div class="card-body">
+                    <h2 class="card-title">{{ diary.title }}</h2>
+                    <p class="card-text">{{ diary.content | truncatechars:20 }}</p>
+                    <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+                <div class="card-footer text-muted">
+                    {{ diary.created_at }}
+                </div>
+            </div>
+        {% empty %}
+            <p>記事がありません。</p>
+        {% endfor %}
+
+        <!-- Pagination -->
+        {% if is_pagenated %}
+            <ul class="pagination justify-content-center mb-4">
+                <li class="page-item">
+                    <a class="page-link" href="#">&larr; Older</a>
+                </li>
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">Newer &rarr;</a>
+                </li>
+            </ul>
+        {% endif %}
+    </div>
+{% endblock %}
