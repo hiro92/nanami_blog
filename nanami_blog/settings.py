@@ -166,11 +166,11 @@ LOGGING = {
     #ロガーの設定
     'loggers': {
         'django': {
-            'handlers':['console'],
+            'handlers':['file'],
             'level': 'INFO',
         },
         'diary': {
-            'handlers': ['console'],
+            'handlers': ['file'],
             'level': 'INFO',
         },
     },
