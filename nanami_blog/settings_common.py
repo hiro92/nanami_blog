@@ -45,6 +45,8 @@ INSTALLED_APPS = [
 
     'diary.apps.DiaryConfig',
     'accounts.apps.AccountsConfig',
+
+    'django_ses',
 ]
 
 MIDDLEWARE = [
