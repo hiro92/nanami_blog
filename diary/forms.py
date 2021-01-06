@@ -27,10 +27,9 @@ class InquiryForm(forms.Form):
         email = self.cleaned_data['email']
         title = self.cleaned_data['title']
         message = self.cleaned_data['message']
-
         subject = 'お問い合わせ {}'.format(title)
         message = '送信者名: {0}\nメールアドレス: {1}\nメッセージ:\n{2}'.format(name,email,message)
-        from_email = os.environ.get('FROM_EMAIL')
+        from_email = 'hirofumi.4.4.19@gmail.com'
         to_list = [
             'test@example.com'
         ]
