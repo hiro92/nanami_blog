@@ -20,7 +20,8 @@ from django.contrib.staticfiles.urls import static
 from . import settings_dev,settings_common
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
+    path('nanami_update', admin.site.urls),
     path('', include('diary.urls')),
 ]
 
